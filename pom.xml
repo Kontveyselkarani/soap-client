@@ -64,10 +64,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 			<!-- tag::wsdl[] -->
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
@@ -78,22 +74,20 @@
 						<goals>
 							<goal>generate</goal>
 						</goals>
-
 					</execution>
 				</executions>
 				<configuration>
-					<accessExternalDTD></accessExternalDTD>
 					<schemaLanguage>WSDL</schemaLanguage>
-<!--					<schemaDirectory>${basedir}/src/main/resources/wsdl</schemaDirectory>-->
-<!--					<schemaIncludes>-->
-<!--						<include>studentDetailsWsdl.wsdl</include>-->
-<!--					</schemaIncludes>-->
-<!--					<generatePackage>com.example.consumingwebservice.wsdl</generatePackage>-->
+					<!--					<schemaDirectory>${basedir}/src/main/resources/wsdl</schemaDirectory>-->
+					<!--					<schemaIncludes>-->
+					<!--						<include>studentDetailsWsdl.wsdl</include>-->
+					<!--					</schemaIncludes>-->
+					<!--					<generatePackage>com.example.consumingwebservice.wsdl</generatePackage>-->
 					<!--generatePackage Kapatılırsa kendi default packatler oluturarak ayırılır -->
 					<generatePackage>com.example.wsdl</generatePackage>
-					<generateDirectory>${project.build.directory}/generated-sources/com.example.wsdl</generateDirectory>
-<!--					useActiveProxyAsHttpproxy Setting xml proxy bilgileri okunması sağlanır -->
-<!--					<useActiveProxyAsHttpproxy>true</useActiveProxyAsHttpproxy>-->
+					<generateDirectory>${project.build.directory}/classes/com.example.wsdl</generateDirectory>
+					<!--					useActiveProxyAsHttpproxy Setting xml proxy bilgileri okunması sağlanır -->
+					<!--                    					<useActiveProxyAsHttpproxy>true</useActiveProxyAsHttpproxy>-->
 					<accessExternalSchema>all</accessExternalSchema>
 					<accessExternalDTD>all</accessExternalDTD>
 					<encoding>${project.build.sourceEncoding}</encoding>
