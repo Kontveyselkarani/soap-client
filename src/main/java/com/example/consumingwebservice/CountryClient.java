@@ -1,7 +1,9 @@
 package com.example.consumingwebservice;
 
-import com.example.consumingwebservice.wsdl.StudentDetailsRequest;
-import com.example.consumingwebservice.wsdl.StudentDetailsResponse;
+//import com.example.consumingwebservice.wsdl.StudentDetailsRequest;
+//import com.example.consumingwebservice.wsdl.StudentDetailsResponse;
+import com.example.wsdl.StudentDetailsRequest;
+import com.example.wsdl.StudentDetailsResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

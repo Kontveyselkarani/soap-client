@@ -1,6 +1,7 @@
 package com.example.consumingwebservice;
 
-import com.example.consumingwebservice.wsdl.StudentDetailsResponse;
+
+import com.example.wsdl.StudentDetailsResponse;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

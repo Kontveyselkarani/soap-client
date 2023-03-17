@@ -78,22 +78,45 @@
 						<goals>
 							<goal>generate</goal>
 						</goals>
+
 					</execution>
 				</executions>
 				<configuration>
+					<accessExternalDTD></accessExternalDTD>
 					<schemaLanguage>WSDL</schemaLanguage>
-					<schemaDirectory>${basedir}/src/main/resources/wsdl</schemaDirectory>
-					<schemaIncludes>
-						<include>studentDetailsWsdl.wsdl</include>
-					</schemaIncludes>
-					<generatePackage>com.example.consumingwebservice.wsdl</generatePackage>
-					<outputDirectory>${project.build.directory}/src/main/java</outputDirectory>
-<!--					<schemas>-->
-<!--						<schema>-->
-<!--							<-->
-<!--							<url>http://localhost:8080/ws/countries.wsdl</url>-->
-<!--						</schema>-->
-<!--					</schemas>-->
+<!--					<schemaDirectory>${basedir}/src/main/resources/wsdl</schemaDirectory>-->
+<!--					<schemaIncludes>-->
+<!--						<include>studentDetailsWsdl.wsdl</include>-->
+<!--					</schemaIncludes>-->
+<!--					<generatePackage>com.example.consumingwebservice.wsdl</generatePackage>-->
+					<!--generatePackage Kapatılırsa kendi default packatler oluturarak ayırılır -->
+					<generatePackage>com.example.wsdl</generatePackage>
+					<generateDirectory>${project.build.directory}/generated-sources/com.example.wsdl</generateDirectory>
+<!--					useActiveProxyAsHttpproxy Setting xml proxy bilgileri okunması sağlanır -->
+<!--					<useActiveProxyAsHttpproxy>true</useActiveProxyAsHttpproxy>-->
+					<accessExternalSchema>all</accessExternalSchema>
+					<accessExternalDTD>all</accessExternalDTD>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<addCompileSourceRoot>false</addCompileSourceRoot>
+					<schemas>
+						<schema>
+							<url>https://www.w3schools.com/xml/tempconvert.asmx?WSDL</url>
+						</schema>
+						<schema>
+							<fileset>
+								<!-- Defaults to schemaDirectory. -->
+								<directory>${basedir}/src/main/resources/wsdl</directory>
+								<!-- Defaults to schemaIncludes. -->
+								<includes>
+									<include>*.wsdl</include>
+								</includes>
+								<!-- Defaults to schemaIncludes -->
+								<excludes>
+									<exclude>*.xs</exclude>
+								</excludes>
+							</fileset>
+						</schema>
+					</schemas>
 				</configuration>
 			</plugin>
 			<!-- end::wsdl[] -->
